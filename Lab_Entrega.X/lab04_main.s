@@ -131,7 +131,7 @@ int_tmr0:
     movf contador, W
     sublw 50  ; repetir 50 veces -> 50 * 20ms = 1000ms
     btfss ZERO ; STATUS 2 , cero
-    goto return_tmr0 ; repite hasque que sea cero w
+    return ; repite hasque que sea cero w
     clrf contador
     incf conteo
     movwf conteo, W
@@ -139,8 +139,6 @@ int_tmr0:
     movwf PORTD
     
     
-return_tmr0:
-    return
  
     
 ;----------- Configuración -----------------------
